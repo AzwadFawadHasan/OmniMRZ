@@ -1,3 +1,4 @@
 #.gitignore
 speedMRZ.ipynb
 .ipynb_checkpoints/
+omnimrz/__pycache__/
