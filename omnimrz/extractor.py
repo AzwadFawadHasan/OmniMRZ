@@ -3,6 +3,12 @@ import cv2
 import re
 import numpy as np
 from paddleocr import PaddleOCR
+from .validation import (
+    structural_mrz_validation,
+    checksum_mrz_validation,
+    logical_mrz_validation,
+)
+from .parser import parse_mrz_fields
 
 
 class OmniMRZ:
@@ -129,3 +135,42 @@ class OmniMRZ:
             "line1": mrz[0],
             "line2": mrz[1],
         }
+    def process(self, image):
+        """
+        Full MRZ pipeline:
+        Extraction → Structural → Checksum → Parsing → Logical
+        """
+
+        extraction = self.get_details(image)
+
+        result = {
+            "extraction": extraction,
+            "structural_validation": None,
+            "checksum_validation": None,
+            "parsed_data": None,
+            "logical_validation": None,
+        }
+
+        if extraction.get("status") != "SUCCESS(extraction of mrz)":
+            return result
+
+        structural = structural_mrz_validation(extraction)
+        result["structural_validation"] = structural
+
+        if structural["status"] != "PASS":
+            return result
+
+        checksum = checksum_mrz_validation(extraction, structural["mrz_type"])
+        result["checksum_validation"] = checksum
+
+        if checksum["status"] != "PASS":
+            return result
+
+        parsed = parse_mrz_fields(extraction, structural["mrz_type"])
+        result["parsed_data"] = parsed
+
+        logical = logical_mrz_validation(parsed, structural["mrz_type"])
+        result["logical_validation"] = logical
+
+        return result
+

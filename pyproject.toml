@@ -8,16 +8,14 @@ version = "0.1.0"
 description = "Fast and robust MRZ extraction, parsing, and validation using PaddleOCR"
 readme = "README.md"
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = { text = "Apache-2.0" }
 authors = [
     { name = "Azwad Fawad Hasan", email = "azwadfawadhasan@gmail.com" }
 ]
 keywords = ["mrz", "passport", "ocr", "identity", "paddleocr"]
 
 dependencies = [
-    "opencv-python",
-    "numpy",
-    "paddleocr>=2.6.0",
+    "paddleocr",
     "paddlepaddle"
 ]
 

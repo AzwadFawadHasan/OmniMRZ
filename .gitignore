@@ -2,3 +2,4 @@
 speedMRZ.ipynb
 .ipynb_checkpoints/
 omnimrz/__pycache__/
+omnimrz.egg-info/
