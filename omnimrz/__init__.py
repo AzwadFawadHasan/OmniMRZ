@@ -7,7 +7,7 @@ from .validation import (
 )
 
 __all__ = [
-    "FastMRZ",
+    "OmniMRZ",
     "parse_mrz_fields",
     "structural_mrz_validation",
     "checksum_mrz_validation",
