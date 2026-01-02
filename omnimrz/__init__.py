@@ -1,3 +1,4 @@
+# omnimrz\__init__.py
 from .extractor import OmniMRZ
 from .parser import parse_mrz_fields
 from .validation import (

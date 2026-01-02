@@ -1,1 +1,3 @@
+#.gitignore
 speedMRZ.ipynb
+.ipynb_checkpoints/
