@@ -53,3 +53,6 @@ print(result)
   }
 }
 ```
+
+## misc
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=AzwadFawadHasan.OmniMRZ)
