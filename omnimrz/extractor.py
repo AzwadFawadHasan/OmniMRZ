@@ -13,9 +13,7 @@ from .parser import parse_mrz_fields
 
 class OmniMRZ:
     def __init__(self, lang="en"):
-        print("Initializing PaddleOCR (stable 3.x)...")
         self.ocr = PaddleOCR(lang=lang)
-        print("PaddleOCR initialized OK")
 
     # ---------------------------------------------------------
     # 1. Image Preprocessing

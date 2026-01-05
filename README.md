@@ -39,17 +39,40 @@ print(result)
 # Output Example
 ```
 {
-  "status": "PARSED",
-  "data": {
-    "document_type": "P",
-    "issuing_country": "USA",
-    "surname": "DOE",
-    "given_names": "JOHN",
-    "document_number": "123456789",
-    "nationality": "USA",
-    "date_of_birth": "1990-01-01",
-    "gender": "M",
-    "expiry_date": "2030-01-01"
+  "extraction": {
+    "status": "SUCCESS(extraction of mrz)",
+    "line1": "P<GBRPUDARSAN<<HENERT<<<<<<<<<<<<<<<<<<<<<<<",
+    "line2": "7077979792GBR9505209M1704224<<<<<<<<<<<<<<00"
+  },
+  "structural_validation": {
+    "status": "PASS",
+    "mrz_type": "TD3",
+    "errors": []
+  },
+  "checksum_validation": {
+    "status": "PASS",
+    "errors": []
+  },
+  "parsed_data": {
+    "status": "PARSED",
+    "data": {
+      "document_type": "P",
+      "issuing_country": "GBR",
+      "surname": "PUDARSAN",
+      "given_names": "HENERT",
+      "document_number": "707797979",
+      "nationality": "GBR",
+      "date_of_birth": "1995-05-20",
+      "gender": "M",
+      "expiry_date": "2017-04-22",
+      "personal_number": ""
+    }
+  },
+  "logical_validation": {
+    "status": "FAIL",
+    "errors": [
+      "DOCUMENT_EXPIRED"
+    ]
   }
 }
 ```
