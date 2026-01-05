@@ -1,4 +1,26 @@
 # OmniMRZ
+<!-- 
+OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
+
+Unlike simple MRZ readers, OmniMRZ evaluates whether an MRZ is structurally correct, cryptographically valid, and logically plausible.
+
+⭐ Show Your Support
+If OmniMRZ helped you or saved development time:
+👉 Please consider starring the repository
+It helps visibility and motivates continued development  -->
+
+
+<div align="center">
+
+[![License](https://img.shields.io/badge/license-AGPL%203.0-34D058?color=blue)](https://github.com/AzwadFawadHasan/OmniMRZ/LICENSE)
+[![Downloads](https://static.pepy.tech/badge/OmniMRZ)](https://pypistats.org/packages/omnimrz)
+![Python](https://img.shields.io/badge/python-3.8+-blue?logo=python&logoColor=959DA5)
+[![CodeQL](https://github.com/AzwadFawadHasan/OmniMRZ/actions/workflows/codeql.yml/badge.svg)](https://github.com/AzwadFawadHasan/OmniMRZ/actions/workflows/codeql.yml)
+[![PyPI](https://img.shields.io/pypi/v/OmniMRZ.svg?logo=pypi&logoColor=959DA5&color=blue)](https://pypi.org/project/OmniMRZ/)
+
+<a href="https://github.com/AzwadFawadHasan/OmniMRZ/" target="_blank">
+    <img src="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/docs/omni_mrz_logo.png" target="_blank" />
+</a>
 
 OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
 
@@ -8,6 +30,22 @@ Unlike simple MRZ readers, OmniMRZ evaluates whether an MRZ is structurally corr
 If OmniMRZ helped you or saved development time:
 👉 Please consider starring the repository
 It helps visibility and motivates continued development 
+
+
+[Features](#features) 
+<!-- [Built With](#built-with) •
+[Prerequisites](#prerequisites) • -->
+[Installation](#installation) 
+<!-- [Example](#example) •
+[Wiki](#wiki) •
+[ToDo](#todo) • -->
+<!-- [Contributing](- Contributing) -->
+[Contributing](#-contributing)
+
+
+
+</div>
+
 
 ## Features
 ### At a glance
@@ -125,9 +163,9 @@ print(result)
 ```
 
 
-# 🤝 Contributing
+## Contributing 
 
-Contributions are welcome!
+Contributions are welcome!🤝
 
 1. Fork the repository
 2. Create your feature branch
