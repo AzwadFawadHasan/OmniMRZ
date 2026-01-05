@@ -1,15 +1,62 @@
 # OmniMRZ
 
-OmniMRZ is a fast, production-ready Python library for extracting, parsing, and validating
-Machine Readable Zones (MRZ) from passports and ID documents using PaddleOCR.
+OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
+
+Unlike simple MRZ readers, OmniMRZ evaluates whether an MRZ is structurally correct, cryptographically valid, and logically plausible.
+
+⭐ Show Your Support
+If OmniMRZ helped you or saved development time:
+👉 Please consider starring the repository
+It helps visibility and motivates continued development 
 
 ## Features
-
+### At a glance
 - MRZ detection and extraction from images
 - Supports TD3 (passport) format
 - Checksum validation (ICAO 9303)
 - Logical and structural validation
 - Clean Python API
+
+# Detailed features
+#### 🔍 MRZ Extraction
+- PaddleOCR-based MRZ text extraction (robust on mobile & noisy images)
+- Intelligent MRZ line clustering & reconstruction
+- Automatic MRZ type detection (TD1 / TD2 / TD3)
+- OCR noise filtering & MRZ-safe character normalization
+- Works even with partially corrupted or misaligned MRZs
+
+#### 🧱 Structural Validation (ICAO 9303)
+- Exact line-length enforcement
+- Strict MRZ format verification
+- Field-level structural checks
+- Early-exit gating for invalid layouts
+
+#### 🔢 Checksum Validation
+
+- Fully ICAO-9303 compliant checksum algorithm
+- Field-level validation:
+- Document number
+- Date of birth
+- Expiry date
+- Composite checksum
+- OCR-error tolerant digit correction (O→0, S→5, B→8, etc.)
+- Detailed checksum failure diagnostics
+
+#### 🧠 Logical & Semantic Validation
+
+- Expired document detection
+- Future date-of-birth detection
+- Implausible age detection
+- DOB ≥ expiry detection
+- Gender value validation (M, F, X, <)
+- Cross-field consistency signals (issuer vs nationality)
+
+#### 📤 Output
+
+- Clean MRZ text
+- Structured JSON
+- Deterministic pass / fail / warning signals
+- Human-readable error messages
 
 ## Installation
 
@@ -76,6 +123,20 @@ print(result)
   }
 }
 ```
+
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create your feature branch
+```bash
+git checkout -b feature/amazing-feature
+```
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
 
 ## misc
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=AzwadFawadHasan.OmniMRZ)
