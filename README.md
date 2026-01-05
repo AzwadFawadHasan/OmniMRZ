@@ -19,7 +19,7 @@ It helps visibility and motivates continued development  -->
 [![PyPI](https://img.shields.io/pypi/v/OmniMRZ.svg?logo=pypi&logoColor=959DA5&color=blue)](https://pypi.org/project/OmniMRZ/)
 
 <a href="https://github.com/AzwadFawadHasan/OmniMRZ/" target="_blank">
-    <img src="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/docs/omni_mrz_logo.png" target="_blank" />
+    [<img src="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/docs/omni_mrz_logo.png" target="_blank" />](https://github.com/AzwadFawadHasan/OmniMRZ/blob/main/omni_mrz_logo.png)
 </a>
 
 OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
