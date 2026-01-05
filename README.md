@@ -28,7 +28,7 @@ python -m pip install paddlepaddle==3.0.0 -i https://www.paddlepaddle.org.cn/pac
 ```
 
 # Quick Usage
-```bash
+```python
 from omnimrz import OmniMRZ
 
 omni = OmniMRZ()
