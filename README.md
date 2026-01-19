@@ -1,13 +1,4 @@
-# OmniMRZ
-<!-- 
-OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
-
-Unlike simple MRZ readers, OmniMRZ evaluates whether an MRZ is structurally correct, cryptographically valid, and logically plausible.
-
-⭐ Show Your Support
-If OmniMRZ helped you or saved development time:
-👉 Please consider starring the repository
-It helps visibility and motivates continued development  -->
+# OmniMRZ — Python MRZ Extraction & Validation Library for Passport OCR and KYC
 
 
 <div align="center">
@@ -22,9 +13,20 @@ It helps visibility and motivates continued development  -->
     <img src="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/omni_mrz_logo.jpg" target="_blank" />
 </a>
 
-OmniMRZ is a production-grade MRZ extraction and validation engine designed for KYC, identity verification, and document intelligence pipelines.
+**OmniMRZ** is an open-source **Python library for Machine Readable Zone (MRZ) extraction, parsing, and ICAO-9303 validation** from passport and ID images, built for OCR, KYC, and identity verification systems.
+
+It is a production-grade MRZ extraction and validation engine designed for high-accuracy KYC, identity verification, and document intelligence pipelines.
 
 Unlike simple MRZ readers, OmniMRZ evaluates whether an MRZ is structurally correct, cryptographically valid, and logically plausible.
+
+### Typical Use Cases
+
+🛂 Passport and ID card OCR pipelines  
+🏦 KYC / AML identity verification systems  
+✈️ Border control and immigration preprocessing  
+📄 Document digitization and archiving  
+🔐 Authentication and onboarding workflows  
+
 
 ⭐ Show Your Support
 If OmniMRZ helped you or saved development time:
@@ -46,6 +48,14 @@ It helps visibility and motivates continued development
 
 </div>
 
+## Why OmniMRZ?
+
+Unlike basic MRZ readers, OmniMRZ provides **end-to-end MRZ quality assurance**:
+
+- Combines OCR, structural validation, checksum verification, and logical consistency checks  
+- Fully compliant with **ICAO 9303**  
+- Designed for **production KYC and identity verification systems**  
+- Robust against OCR noise and partially corrupted MRZ lines 
 
 ## Features
 ### At a glance
@@ -161,6 +171,9 @@ print(result)
   }
 }
 ```
+## Citing OmniMRZ
+
+If you use OmniMRZ in academic research or publications, please consider citing this repository:
 
 
 ## Contributing 
@@ -175,6 +188,10 @@ git checkout -b feature/amazing-feature
 3. Commit your changes
 4. Push to your branch
 5. Open a Pull Request
+
+## Keywords
+
+MRZ extraction, passport OCR, machine readable zone, ICAO 9303, MRZ parser, Python OCR, identity verification, KYC automation, document intelligence, ID card scanning, border control OCR
 
 ## misc
 ![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=AzwadFawadHasan.OmniMRZ)
