@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnimrz"
-version = "0.1.2"
+version = "0.2.0"
 description = "Fast and robust MRZ extraction, parsing, and validation using PaddleOCR"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -20,9 +20,31 @@ dependencies = [
     "ScreenshotScanner"
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "black",
+    "isort",
+    "flake8",
+]
+
 [project.urls]
 Homepage = "https://github.com/AzwadFawadHasan/OmniMRZ"
 Issues = "https://github.com/AzwadFawadHasan/OmniMRZ/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
+include = ["omnimrz/py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+]
