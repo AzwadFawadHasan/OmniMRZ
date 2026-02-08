@@ -1,8 +1,4 @@
 # # testing.py
-# from omnimrz import OmniMRZ
-# print(OmniMRZ().process("ukpassport.jpg"))
-
-
 from omnimrz import OmniMRZ
 import json
 
