@@ -134,41 +134,52 @@ print(result)
 # Output Example
 ```
 {
-  "extraction": {
-    "status": "SUCCESS(extraction of mrz)",
-    "line1": "P<GBRPUDARSAN<<HENERT<<<<<<<<<<<<<<<<<<<<<<<",
-    "line2": "7077979792GBR9505209M1704224<<<<<<<<<<<<<<00"
-  },
-  "structural_validation": {
-    "status": "PASS",
-    "mrz_type": "TD3",
-    "errors": []
-  },
-  "checksum_validation": {
-    "status": "PASS",
-    "errors": []
-  },
-  "parsed_data": {
-    "status": "PARSED",
-    "data": {
-      "document_type": "P",
-      "issuing_country": "GBR",
-      "surname": "PUDARSAN",
-      "given_names": "HENERT",
-      "document_number": "707797979",
-      "nationality": "GBR",
-      "date_of_birth": "1995-05-20",
-      "gender": "M",
-      "expiry_date": "2017-04-22",
-      "personal_number": ""
+    "extraction": {
+        "status": "SUCCESS(extraction of mrz)",
+        "line1": "P<GBRPUDARSAN<<HENERT<<<<<<<<<<<<<<<<<<<<<<<",
+        "line2": "7077979792GBR9505209M1704224<<<<<<<<<<<<<<00" 
+    },
+    "structural_validation": {
+        "status": "PASS",
+        "mrz_type": "TD3",
+        "errors": []
+    },
+    "checksum_validation": {
+        "status": "PASS",
+        "errors": []
+    },
+    "parsed_data": {
+        "status": "PARSED",
+        "data": {
+            "document_type": "P",
+            "issuing_country": "GBR",
+            "surname": "PUDARSAN",
+            "given_names": "HENERT",
+            "document_number": "707797979",
+            "nationality": "GBR",
+            "date_of_birth": "1995-05-20",
+            "gender": "M",
+            "expiry_date": "2017-04-22",
+            "personal_number": ""
+        }
+    },
+    "logical_validation": {
+        "status": "FAIL",
+        "errors": [
+            "DOCUMENT_EXPIRED"
+        ]
+    },
+    "screenshot_detection": {
+        "status": "PASS",
+        "is_screenshot": false,
+        "score": 3,
+        "confidence": 30.0,
+        "reasons": [
+            "Low ELA: 0.38",
+            "High horizontal edges: 0.51",
+            "High sharpness: 2029.58"
+        ]
     }
-  },
-  "logical_validation": {
-    "status": "FAIL",
-    "errors": [
-      "DOCUMENT_EXPIRED"
-    ]
-  }
 }
 ```
 ## Citing OmniMRZ
