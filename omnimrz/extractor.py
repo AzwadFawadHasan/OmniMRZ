@@ -3,6 +3,7 @@ import cv2
 import re
 import numpy as np
 from paddleocr import PaddleOCR
+from screenshot_scanner import ScreenshotScanner
 from .validation import (
     structural_mrz_validation,
     checksum_mrz_validation,
@@ -14,6 +15,7 @@ from .parser import parse_mrz_fields
 class OmniMRZ:
     def __init__(self, lang="en"):
         self.ocr = PaddleOCR(lang=lang)
+        self.screenshot_scanner = ScreenshotScanner()
 
     # ---------------------------------------------------------
     # 1. Image Preprocessing
@@ -27,6 +29,9 @@ class OmniMRZ:
         gray = cv2.resize(gray, None, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
         gray = cv2.GaussianBlur(gray, (3, 3), 0)
         return cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
+
+    def _detect_screenshot(self, image_path):
+        return self.screenshot_scanner.process(image_path)
 
     # ---------------------------------------------------------
     # 2. Text Normalization & Clustering
@@ -139,6 +144,13 @@ class OmniMRZ:
         Extraction → Structural → Checksum → Parsing → Logical
         """
 
+        # Screenshot detection
+        screenshot_result = None
+        if isinstance(image, str):
+            screenshot_result = self._detect_screenshot(image)
+        else:
+            screenshot_result = {"is_screenshot": False, "score": 0, "confidence": 0.0, "reasons": []}
+
         extraction = self.get_details(image)
 
         result = {
@@ -147,6 +159,13 @@ class OmniMRZ:
             "checksum_validation": None,
             "parsed_data": None,
             "logical_validation": None,
+            "screenshot_detection": {
+                "status": "WARNING" if screenshot_result["is_screenshot"] else "PASS",
+                "is_screenshot": screenshot_result["is_screenshot"],
+                "score": screenshot_result["score"],
+                "confidence": screenshot_result["confidence"],
+                "reasons": screenshot_result["reasons"]
+            }
         }
 
         if extraction.get("status") != "SUCCESS(extraction of mrz)":
