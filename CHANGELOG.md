@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2026-02-19
+
+### Added
+- Enhanced PyPI discoverability with expanded keywords and classifiers
+- New keywords for better search indexing: icao-9303, kyc, aml, identity-verification, document-verification, mrz-extraction, mrz-parser, mrz-validation, document-intelligence
+- Comprehensive classifiers for financial/insurance industry and image recognition
+
+### Changed
+- Updated pyproject.toml with 38 metadata classifiers for improved SEO
+
+### Fixed
+- N/A
+
 ## [0.2.0] - 2026-02-08
 
 ### Added
