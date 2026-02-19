@@ -37,7 +37,8 @@ It helps visibility and motivates continued development
 [Features](#features) 
 <!-- [Built With](#built-with) •
 [Prerequisites](#prerequisites) • -->
-[Installation](#installation) 
+[Installation](#installation)
+[Documentation](#documentation)
 <!-- [Example](#example) •
 [Wiki](#wiki) •
 [ToDo](#todo) • -->
@@ -56,6 +57,16 @@ Unlike basic MRZ readers, OmniMRZ provides **end-to-end MRZ quality assurance**:
 - Fully compliant with **ICAO 9303**  
 - Designed for **production KYC and identity verification systems**  
 - Robust against OCR noise and partially corrupted MRZ lines 
+
+## OmniMRZ vs Competitors
+
+### Why OmniMRZ Wins:
+- **Zero-friction Installation**: Just `pip install omnimrz` — no Tesseract PATH configuration, no system library headaches
+- **Industry-Leading Accuracy**: PaddleOCR delivers superior results on passport images, even with skewed angles and wear
+- **Production-Grade Security**: Complete ICAO-9303 compliance + cryptographic checksum validation — ready for KYC/AML systems
+- **Screenshot Detection**: Automatically detects document screenshots to prevent fraud
+- **Comprehensive Validation**: Logical checks (expired documents, DOB plausibility, gender validation) that competitors skip
+- **Built for Enterprise**: Designed from the ground up for identity verification, border control, and compliance workflows
 
 ## Features
 ### At a glance
@@ -121,6 +132,16 @@ or if that fails then run
 ```bash
 python -m pip install paddlepaddle==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
 ```
+
+## Documentation
+
+Comprehensive guides to help you get started and integrate OmniMRZ into your projects:
+
+- **[Getting Started](./docs/getting-started.md)** — Installation, first steps, and basic usage
+- **[API Reference](./docs/api-reference.md)** — Complete method documentation and response formats
+- **[Validation Explained](./docs/validation-explained.md)** — How ICAO-9303 validation works (technical deep-dive)
+- **[KYC Integration](./docs/kyc-integration.md)** — Production-ready KYC/AML system integration with code examples
+- **[Troubleshooting](./docs/troubleshooting.md)** — Common issues and solutions
 
 # Quick Usage
 ```python
