@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OmniMRZ - Production-grade Python library for MRZ extraction, parsing, and ICAO-9303 validation from passports and ID cards. Built for KYC, identity verification, and document intelligence systems.">
+    <meta name="keywords" content="MRZ, passport OCR, ICAO-9303, identity verification, KYC, AML, document intelligence, PaddleOCR, Python">
+    <meta name="author" content="Azwad Fawad Hasan">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/AzwadFawadHasan/OmniMRZ">
+    <meta property="og:title" content="OmniMRZ - Python MRZ Extraction & Validation Library">
+    <meta property="og:description" content="Fast and robust MRZ extraction, parsing, and ICAO-9303 validation for passport OCR and KYC systems">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/omni_mrz_logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/AzwadFawadHasan/OmniMRZ">
+    <meta property="twitter:title" content="OmniMRZ - Python MRZ Extraction & Validation Library">
+    <meta property="twitter:description" content="Production-grade library for passport & ID card MRZ validation with ICAO-9303 compliance">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/AzwadFawadHasan/OmniMRZ/main/omni_mrz_logo.jpg">
+    
+    <title>OmniMRZ - Python MRZ Extraction & Validation Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://github.com/AzwadFawadHasan/OmniMRZ">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>OmniMRZ</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#comparison">Comparison</a></li>
+                <li><a href="#installation">Install</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="https://github.com/AzwadFawadHasan/OmniMRZ" target="_blank" class="btn-github">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Production-Grade MRZ Extraction & Validation</h1>
+                <p>Fast, accurate, and ICAO-9303 compliant Python library for passport OCR, identity verification, and KYC systems.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">Get Started</a>
+                    <a href="https://pypi.org/project/omnimrz/" target="_blank" class="btn btn-secondary">PyPI Package</a>
+                    <a href="https://github.com/AzwadFawadHasan/OmniMRZ" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                </div>
+
+                <div class="hero-badges">
+                    <span class="badge">Python 3.8+</span>
+                    <span class="badge">ICAO-9303 Compliant</span>
+                    <span class="badge">Production Ready</span>
+                    <span class="badge">Open Source</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="code-block">
+                    <pre><code>from omnimrz import OmniMRZ
+
+omni = OmniMRZ()
+result = omni.process("passport.jpg")
+
+# Full validation in 1 call
+# ✓ Extraction
+# ✓ Structural validation
+# ✓ Checksum verification
+# ✓ Parsing
+# ✓ Logical validation</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why OmniMRZ Section -->
+    <section class="why-omnimrz">
+        <div class="container">
+            <h2>Why Choose OmniMRZ?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Zero-Friction Installation</h3>
+                    <p>Just <code>pip install omnimrz</code> — no Tesseract PATH configuration or system library headaches.</p>
+                </div>
+                <div class="card">
+                    <h3>Industry-Leading Accuracy</h3>
+                    <p>PaddleOCR delivers superior results on passport images, even with skewed angles and wear.</p>
+                </div>
+                <div class="card">
+                    <h3>Production-Grade Security</h3>
+                    <p>Complete ICAO-9303 compliance + cryptographic checksum validation ready for KYC/AML systems.</p>
+                </div>
+                <div class="card">
+                    <h3>Fraud Detection</h3>
+                    <p>Automatically detects document screenshots and applies comprehensive logical validation.</p>
+                </div>
+                <div class="card">
+                    <h3>Comprehensive Validation</h3>
+                    <p>Structural, checksum, and logical checks that competitors skip — expired documents, DOB plausibility, gender validation.</p>
+                </div>
+                <div class="card">
+                    <h3>Enterprise Ready</h3>
+                    <p>Designed for identity verification, border control, and compliance workflows at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Comprehensive Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>MRZ Extraction</h3>
+                    <ul>
+                        <li>PaddleOCR-based text extraction</li>
+                        <li>Intelligent line clustering</li>
+                        <li>Automatic MRZ type detection (TD1/TD2/TD3)</li>
+                        <li>OCR error correction (O→0, S→5, B→8)</li>
+                        <li>Handles corrupted/misaligned MRZs</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h3>Structural Validation</h3>
+                    <ul>
+                        <li>ICAO-9303 format compliance</li>
+                        <li>Exact line-length enforcement</li>
+                        <li>Field-level format verification</li>
+                        <li>Character set validation</li>
+                        <li>Early-exit gating for invalid layouts</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h3>Checksum Validation</h3>
+                    <ul>
+                        <li>Full ICAO-9303 algorithm implementation</li>
+                        <li>Document number checksum</li>
+                        <li>Date of birth checksum</li>
+                        <li>Expiry date checksum</li>
+                        <li>Composite checksum verification</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h3>Data Parsing</h3>
+                    <ul>
+                        <li>Structured JSON output</li>
+                        <li>Name, DOB, nationality extraction</li>
+                        <li>Document type & number</li>
+                        <li>Gender and personal number</li>
+                        <li>Clean, accessible data format</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h3>Logical Validation</h3>
+                    <ul>
+                        <li>Expired document detection</li>
+                        <li>Future date-of-birth detection</li>
+                        <li>Implausible age detection</li>
+                        <li>DOB ≥ expiry detection</li>
+                        <li>Gender value validation</li>
+                    </ul>
+                </div>
+
+                <div class="feature">
+                    <h3>Fraud Detection</h3>
+                    <ul>
+                        <li>Screenshot detection</li>
+                        <li>Image quality assessment</li>
+                        <li>ELA (Error Level Analysis)</li>
+                        <li>Confidence scoring</li>
+                        <li>Detailed detection reasons</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <h2>OmniMRZ vs Competitors</h2>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>OmniMRZ</th>
+                            <th>Tesseract-based</th>
+                            <th>EasyOCR</th>
+                            <th>Regex-only</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">Installation</td>
+                            <td class="yes">Simple (pip)</td>
+                            <td class="no">Complex setup</td>
+                            <td class="partial">Moderate</td>
+                            <td class="yes">Simple</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">OCR Accuracy</td>
+                            <td class="yes">⭐⭐⭐⭐⭐</td>
+                            <td class="partial">⭐⭐⭐</td>
+                            <td class="partial">⭐⭐⭐⭐</td>
+                            <td class="no">N/A</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">ICAO-9303 Validation</td>
+                            <td class="yes">✓ Full</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Checksum Verification</td>
+                            <td class="yes">✓ Yes</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Screenshot Detection</td>
+                            <td class="yes">✓ Yes</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Logical Validation</td>
+                            <td class="yes">✓ Yes</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Production Ready</td>
+                            <td class="yes">✓ Yes</td>
+                            <td class="partial">Requires custom work</td>
+                            <td class="partial">Requires custom work</td>
+                            <td class="no">✗</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">KYC/AML Compliance</td>
+                            <td class="yes">✓ Built-in</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                            <td class="no">✗</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="installation" id="installation">
+        <div class="container">
+            <h2>Installation</h2>
+            
+            <div class="installation-grid">
+                <div class="install-card">
+                    <h3>Quick Install</h3>
+                    <pre><code>pip install omnimrz</code></pre>
+                    <p>That's it! No complex dependencies or PATH configurations required.</p>
+                </div>
+
+                <div class="install-card">
+                    <h3>First Steps</h3>
+                    <pre><code>from omnimrz import OmniMRZ
+
+omni = OmniMRZ()
+result = omni.process("passport.jpg")
+print(result)</code></pre>
+                </div>
+            </div>
+
+            <div class="system-requirements">
+                <h3>Requirements</h3>
+                <ul>
+                    <li>Python 3.8 or higher</li>
+                    <li>pip package manager</li>
+                    <li>~500MB disk space (for PaddleOCR models on first run)</li>
+                    <li>Internet connection (first-time model download)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <h2>Use Cases</h2>
+            <div class="cases-grid">
+                <div class="use-case">
+                    <h3>KYC/AML Compliance</h3>
+                    <p>Automate identity verification for financial services, fintech, and lending platforms with full ICAO-9303 validation.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Border Control</h3>
+                    <p>Immigration and border agencies can process travel documents at scale with automatic fraud detection.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Onboarding Automation</h3>
+                    <p>Streamline user onboarding workflows with rapid document verification and data extraction.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Document Digitization</h3>
+                    <p>Convert physical passport records to structured digital formats for archiving and compliance.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Fraud Detection</h3>
+                    <p>Identify forged documents through checksum validation and screenshot detection capabilities.</p>
+                </div>
+                <div class="use-case">
+                    <h3>API Development</h3>
+                    <p>Build secure document verification APIs with comprehensive audit trails and compliance logging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs" id="docs">
+        <div class="container">
+            <h2>Documentation</h2>
+            <p class="section-subtitle">Comprehensive guides to get you started and integrate OmniMRZ into production systems.</p>
+            
+            <div class="docs-grid">
+                <a href="./getting-started.md" class="doc-card">
+                    <h3>Getting Started</h3>
+                    <p>Installation, first steps, and basic usage examples.</p>
+                </a>
+                <a href="./api-reference.md" class="doc-card">
+                    <h3>API Reference</h3>
+                    <p>Complete method documentation with response formats and code examples.</p>
+                </a>
+                <a href="./validation-explained.md" class="doc-card">
+                    <h3>Validation Explained</h3>
+                    <p>Deep dive into ICAO-9303 standard and validation algorithms.</p>
+                </a>
+                <a href="./kyc-integration.md" class="doc-card">
+                    <h3>KYC Integration</h3>
+                    <p>Production-ready examples for KYC/AML system integration.</p>
+                </a>
+                <a href="./troubleshooting.md" class="doc-card">
+                    <h3>Troubleshooting</h3>
+                    <p>Common issues, solutions, and debugging guides.</p>
+                </a>
+                <a href="https://github.com/AzwadFawadHasan/OmniMRZ" target="_blank" class="doc-card">
+                    <h3>GitHub Repository</h3>
+                    <p>Source code, issues, and community contributions.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Output Example Section -->
+    <section class="output-example">
+        <div class="container">
+            <h2>Sample Output</h2>
+            <pre><code>{
+  "extraction": {
+    "status": "SUCCESS(extraction of mrz)",
+    "line1": "P<GBRPUDARSAN<<HENERT<<<<<<<<<<<<<<<<<<<<<<<",
+    "line2": "7077979792GBR9505209M1704224<<<<<<<<<<<<<<00"
+  },
+  "structural_validation": {
+    "status": "PASS",
+    "mrz_type": "TD3",
+    "errors": []
+  },
+  "checksum_validation": {
+    "status": "PASS",
+    "errors": []
+  },
+  "parsed_data": {
+    "status": "PARSED",
+    "data": {
+      "document_type": "P",
+      "issuing_country": "GBR",
+      "surname": "PUDARSAN",
+      "given_names": "HENERT",
+      "document_number": "707797979",
+      "nationality": "GBR",
+      "date_of_birth": "1995-05-20",
+      "gender": "M",
+      "expiry_date": "2017-04-22",
+      "personal_number": ""
+    }
+  },
+  "logical_validation": {
+    "status": "FAIL",
+    "errors": ["DOCUMENT_EXPIRED"]
+  },
+  "screenshot_detection": {
+    "status": "PASS",
+    "is_screenshot": false
+  }
+}</code></pre>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join developers and organizations using OmniMRZ for production-grade MRZ validation.</p>
+            
+            <div class="cta-buttons">
+                <a href="#installation" class="btn btn-primary btn-large">Install Now</a>
+                <a href="https://pypi.org/project/omnimrz/" target="_blank" class="btn btn-secondary btn-large">View on PyPI</a>
+                <a href="https://github.com/AzwadFawadHasan/OmniMRZ" target="_blank" class="btn btn-secondary btn-large">Star on GitHub</a>
+            </div>
+
+            <p class="cta-subtext">Free. Open Source. Production Ready.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>OmniMRZ</h4>
+                    <p>Production-grade MRZ extraction and validation for Python.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/AzwadFawadHasan/OmniMRZ" target="_blank">GitHub</a></li>
+                        <li><a href="https://pypi.org/project/omnimrz/" target="_blank">PyPI</a></li>
+                        <li><a href="./getting-started.md">Getting Started</a></li>
+                        <li><a href="./api-reference.md">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="./validation-explained.md">Validation Guide</a></li>
+                        <li><a href="./kyc-integration.md">KYC Integration</a></li>
+                        <li><a href="./troubleshooting.md">Troubleshooting</a></li>
+                        <li><a href="https://github.com/AzwadFawadHasan/OmniMRZ/issues" target="_blank">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>License</h4>
+                    <p>Apache License 2.0</p>
+                    <p><small>© 2026 Azwad Fawad Hasan</small></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 OmniMRZ. All rights reserved. | Designed for identity verification and document intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const navMenu = document.querySelector('.nav-menu');
+        const navBrand = document.querySelector('.nav-brand');
+        
+        if (window.innerWidth < 768) {
+            navBrand.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'none' ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
