@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnimrz"
-version = "0.2.0"
+version = "0.2.1"
 description = "Fast and robust MRZ extraction, parsing, and validation using PaddleOCR"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -12,7 +12,46 @@ license = { text = "Apache-2.0" }
 authors = [
     { name = "Azwad Fawad Hasan", email = "azwadfawadhasan@gmail.com" }
 ]
-keywords = ["mrz", "passport", "ocr", "identity", "paddleocr"]
+keywords = [
+    "mrz",
+    "passport",
+    "ocr",
+    "identity",
+    "paddleocr",
+    "icao-9303",
+    "kyc",
+    "identity-verification",
+    "document-verification",
+    "mrz-extraction",
+    "mrz-parser",
+    "mrz-validation",
+    "passport-ocr",
+    "id-card",
+    "document-intelligence",
+    "aml",
+    "know-your-customer"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Information Technology",
+    "Topic :: Office/Business",
+    "Topic :: Security",
+    "Topic :: Multimedia :: Graphics :: Viewers",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 
 dependencies = [
     "paddleocr",
