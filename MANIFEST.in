@@ -4,7 +4,7 @@ include omni_mrz_logo.jpg
 exclude *.pyc
 exclude __pycache__
 exclude .git*
-exclude venv/
+prune venv
 exclude dist/
 exclude build/
 exclude *.egg-info/
@@ -14,3 +14,4 @@ exclude .coverage
 exclude htmlcov/
 exclude .DS_Store
 exclude Thumbs.db
+prune release-*
