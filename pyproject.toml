@@ -74,7 +74,7 @@ Issues = "https://github.com/AzwadFawadHasan/OmniMRZ/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["omnimrz/py.typed"]
+include = ["omnimrz*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
